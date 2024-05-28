@@ -7,35 +7,67 @@
     <!-- Lägg till Montserrat font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <style>
-        /* CSS-stilar */
+        /* Grundläggande återställning av marginaler och utfyllnader */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Allmänna stilar för sidan */
         body {
-            font-family: 'Montserrat', sans-serif; /* Byt till Montserrat */
-            font-weight: 800; /* Ge lite extra tjocklek */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
             margin: 0;
             padding: 0;
         }
-        
-        .container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Placera bonusarna jämnt mellan rader */
-}
 
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Placera bonusarna jämnt mellan rader */
+        }
+
+        /* Stilar för sidhuvudet */
         header {
             background: #333;
             color: #bbe837;
             padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         header h1 {
             margin: 0;
             padding: 0;
-            text-align: center;
+            text-align: left; /* Placera rubriken till vänster */
         }
 
+        /* Ny stil för header-images */
+        .header-images {
+            display: flex;
+            gap: 10px; /* Utrymme mellan bilderna */
+        }
+
+        .header-images img {
+            border-radius: 5px; /* Runda hörnen på bilderna */
+        }
+
+        .header-images img:first-child, .header-images img:last-child {
+            width: 60px; /* Ändra bredden för rektangulära bilder */
+            height: 30px; /* Ändra höjden för rektangulära bilder */
+        }
+
+        .header-images img:nth-child(2) {
+            width: 30px; /* Bevara kvadratisk bredd */
+            height: 30px; /* Bevara kvadratisk höjd */
+        }
+
+        /* Stilar för huvudinnehållet */
         main {
             text-align: center;
             margin-top: 50px;
@@ -49,7 +81,7 @@
         .btn {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #007BFF;
+            background-color: #bbe837;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -61,13 +93,11 @@
             background-color: #0056b3;
         }
 
-        #bonuses {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
+        /* Stilar för bonusar */
         .bonus {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Lägg till denna rad för att centrera innehållet horisontellt */
             width: calc(46% - 10px); /* Anpassa bredden för att passa två bredvid varandra och lägg till marginal */
             margin-bottom: 20px;
             padding: 20px;
@@ -95,16 +125,7 @@
             margin: 10px 0;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            background-color: #518a6a;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-
+        /* Stilar för sidfoten */
         footer {
             background: #333;
             color: #fff;
@@ -115,6 +136,46 @@
         footer p {
             margin: 0;
         }
+
+        /* Media queries för att förbättra mobilanvändarupplevelsen */
+        @media (max-width: 768px) {
+            .bonus {
+                width: 100%; /* Gör bonusarna 100% breda på mindre skärmar */
+                flex-direction: column; /* Stapla innehållet vertikalt */
+                text-align: center;
+            }
+
+            .bonus img {
+                margin: 0 auto 20px; /* Centrera bilderna och lägg till bottenmarginal */
+            }
+
+            .btn {
+                width: 100%; /* Gör knapparna 100% breda på mindre skärmar */
+                padding: 10px 0; /* Justera utfyllnaden för knapparna */
+            }
+
+            .welcome {
+                font-size: 28px; /* Minska storleken på välkomsttexten på mindre skärmar */
+            }
+
+            header {
+                flex-direction: column; /* Ändra header layout för små skärmar */
+            }
+
+            .header-images {
+                margin-top: 10px; /* Lägg till lite utrymme över bilderna */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome {
+                font-size: 24px; /* Minska storleken på välkomsttexten ytterligare på mindre skärmar */
+            }
+
+            .btn {
+                font-size: 16px; /* Minska storleken på knapptexten */
+            }
+        }
     </style>
 </head>
 <body>
@@ -122,6 +183,11 @@
         <div class="container">
             <h1>BonusBaren</h1>
             <!-- Lägg till navigationsmeny här om du vill -->
+            <div class="header-images">
+                <img src="bilder/image1.png" alt="Bild 1">
+                <img src="bilder/image2.png" alt="Bild 2">
+                <img src="bilder/image3.png" alt="Bild 3">
+            </div>
         </div>
     </header>
 
@@ -174,25 +240,6 @@
                 </div>
             </div>
 
-            <div class="bonus">
-                <img src="bilder/lvegas.webp" alt="LeoVegas Logotyp">
-                <div class="bonus-details">
-                    <h3>LeoVegas</h3>
-                    <p>Få 100% bonus upp till 4000 + 100 gratissnurr.</p>
-                    <ul>
-                        <li>Svensk spellicens</li>
-                        <li>Minsta insättning: 100 kr</li>
-                        <li>Omsättningskrav: 12x</li>
-                    </ul>
-                    <a href="https://www.leovegas.com" target="_blank" class="btn">Besök LeoVegas</a>
-                </div>
-            </div>
-        </div>
-    </section>
- 
-    <section id="remaining-bonuses">
-        <div class="container">
-            <!-- Här lägger du de fyra sista bonusarna -->
             <div class="bonus">
                 <img src="bilder/hajper.png" alt="Hajper Logotyp">
                 <div class="bonus-details">
@@ -251,19 +298,25 @@
         </div>
     </section>
 
+    <section id="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <p>Har du frågor eller förslag? Kontakta oss på <a href="mailto:info@bonusbaren.com">info@bonusbaren.com</a>.</p>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <p>&copy; 2024 BonusBaren. Alla rättigheter förbehållna.</p>
+            <p>&copy;
+                Spel är alltid en risk. Spela därför ansvarsfullt. Har du problem kan du få hjälp via Stödlinjen.se.
+                
+                Bonusbaren är en plats där du kan hitta dom bästa och mest seriösa spelsidorna på den svenska marknaden. Läs alltid igenom regler och villkor innan du börjar spela på respektive spelsida.
+                
+                Stödlinjen
+                18+ gäller för spel. Regler & villkor gäller för alla bonusar. Vi står för ansvarsfullt spelande. Spelar du för mycket? Besök Stödlinjen eller ring dem på 020-81 91 00.
+                
+                </p>
         </div>
     </footer>
 </body>
 </html>
-
-   
-<section id="contact">
-    <div class="container">
-        <h2>Kontakt</h2>
-        <p>Har du frågor eller förslag? Kontakta oss på <a href="mailto:info@bonusbaren.com">info@bonusbaren.com</a>.</p>
-    </div>
-</section>
-
