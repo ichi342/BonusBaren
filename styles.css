@@ -31,12 +31,30 @@ header {
     background: #333;
     color: #bbe837;
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header h1 {
     margin: 0;
     padding: 0;
     text-align: center;
+    flex-grow: 1; /* Låt h1 ta upp så mycket utrymme som möjligt */
+}
+
+/* Ny stil för header-images */
+.header-images {
+    display: flex;
+    gap: px; /* Utrymme mellan bilderna */
+}
+
+.header-images img {
+    width: 5px; /* Specificera en mindre bredd */
+    height: 3px; /* Specificera en mindre höjd */
+    max-width: 3px; /* Sätt en max-bredd på bilderna */
+    max-height: 3px; /* Sätt en max-höjd på bilderna */
+    border-radius: 2px; /* Valfritt: runda hörnen på bilderna */
 }
 
 /* Stilar för huvudinnehållet */
@@ -128,6 +146,14 @@ footer p {
 
     .welcome {
         font-size: 28px; /* Minska storleken på välkomsttexten på mindre skärmar */
+    }
+
+    header {
+        flex-direction: column; /* Ändra header layout för små skärmar */
+    }
+
+    .header-images {
+        margin-top: 10px; /* Lägg till lite utrymme över bilderna */
     }
 }
 
