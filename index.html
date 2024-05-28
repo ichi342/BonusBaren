@@ -54,8 +54,10 @@
         }
 
         .header-images img {
-            border-radius: 5px; /* Runda hörnen på bilderna */
-        }
+    width: 60px; /* Anpassa bredden för att fylla utrymmet */
+    height: 30px; /* Anpassa höjden för att fylla utrymmet */
+    border-radius: 5px; /* Runda hörnen på bilderna */
+}
 
         .header-images img:first-child, .header-images img:last-child {
             width: 60px; /* Ändra bredden för rektangulära bilder */
@@ -77,6 +79,12 @@
             font-size: 36px;
             margin-bottom: 20px;
         }
+        .footer-section {
+    margin-bottom: 20px; /* Ange önskat mellanrum mellan varje footer-sektion */
+}
+        .empty-space {
+    height: 20px; /* Ange önskad höjd för mellanrummet */
+}
 
         .btn {
             display: inline-block;
@@ -124,6 +132,10 @@
             padding-left: 20px;
             margin: 10px 0;
         }
+        .footer-section a {
+    color: #fff; /* Ändra färgen till vit */
+    text-decoration: underline; /* Understryk länkarna */
+}
 
         /* Stilar för sidfoten */
         footer {
@@ -184,8 +196,10 @@
             <h1>BonusBaren</h1>
             <!-- Lägg till navigationsmeny här om du vill -->
             <div class="header-images">
-                <img src="bilder/image1.png" alt="Bild 1">
-                <img src="bilder/image2.png" alt="Bild 2">
+                <a href="https://www.stodlinjen.se" target="_blank">
+                    <img src="bilder/image2.png" alt="Bild 2">
+                </a>
+                
                 <img src="bilder/image3.png" alt="Bild 3">
             </div>
         </div>
@@ -298,25 +312,24 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Kontakt</h2>
-            <p>Har du frågor eller förslag? Kontakta oss på <a href="mailto:info@bonusbaren.com">info@bonusbaren.com</a>.</p>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
-            <p>&copy;
-                Spel är alltid en risk. Spela därför ansvarsfullt. Har du problem kan du få hjälp via Stödlinjen.se.
-                
-                Bonusbaren är en plats där du kan hitta dom bästa och mest seriösa spelsidorna på den svenska marknaden. Läs alltid igenom regler och villkor innan du börjar spela på respektive spelsida.
-                
-                Stödlinjen
-                18+ gäller för spel. Regler & villkor gäller för alla bonusar. Vi står för ansvarsfullt spelande. Spelar du för mycket? Besök Stödlinjen eller ring dem på 020-81 91 00.
-                
-                </p>
+            <div class="footer-section">
+                <p>Spel är alltid en risk. Spela därför ansvarsfullt. Har du problem kan du få hjälp via <a href="http://www.stodlinjen.se">Stödlinjen.se</a>.</p>
+            </div>
+            <div class="footer-section">
+                <p>Bonusbaren är en plats där du kan hitta de bästa och mest seriösa spelsidorna på den svenska marknaden. Läs alltid igenom regler och villkor innan du börjar spela på respektive spelsida.</p>
+            </div>
+            <div class="footer-section">
+                <p>Vi står för ansvarsfullt spelande. 18+ gäller för spel. Regler & villkor gäller för alla bonusar.</p>
+
+            </div>
+            <div class="footer-section">
+                <p>Spelar du för mycket? Besök <a href="http://www.stodlinjen.se">Stödlinjen.se</a> eller ring dem på 020-81 91 00.</p>
+            </div>
+            <div class="footer-section">
+                <p>Frågor eller förslag? Kontakta oss på <a href="mailto:info@bonusbaren.com">info@bonusbaren.com</a>.</p>
+            </div>
         </div>
     </footer>
-</body>
-</html>
+    
