@@ -9,6 +9,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -19,12 +21,15 @@ body {
     padding: 20px; /* Lägg till lite utrymme runt innehållet */
     border-radius: 15px; /* Runda hörnen på containern */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Lägg till en skugga för att lyfta fram container */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Placera bonusarna jämnt mellan rader */
 }
 
 /* Stilar för sidhuvudet */
 header {
     background: #333;
-    color: #fff;
+    color: #bbe837;
     padding: 10px 0;
 }
 
@@ -65,11 +70,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Lägg till denna rad för att centrera innehållet horisontellt */
+    width: calc(46% - 10px); /* Anpassa bredden för att passa två bredvid varandra och lägg till marginal */
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 .bonus img {
@@ -101,4 +107,36 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Media queries för att förbättra mobilanvändarupplevelsen */
+@media (max-width: 768px) {
+    .bonus {
+        width: 100%; /* Gör bonusarna 100% breda på mindre skärmar */
+        flex-direction: column; /* Stapla innehållet vertikalt */
+        text-align: center;
+    }
+
+    .bonus img {
+        margin: 0 auto 20px; /* Centrera bilderna och lägg till bottenmarginal */
+    }
+
+    .btn {
+        width: 100%; /* Gör knapparna 100% breda på mindre skärmar */
+        padding: 10px 0; /* Justera utfyllnaden för knapparna */
+    }
+
+    .welcome {
+        font-size: 28px; /* Minska storleken på välkomsttexten på mindre skärmar */
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome {
+        font-size: 24px; /* Minska storleken på välkomsttexten ytterligare på mindre skärmar */
+    }
+
+    .btn {
+        font-size: 16px; /* Minska storleken på knapptexten */
+    }
 }
