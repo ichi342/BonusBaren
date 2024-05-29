@@ -61,15 +61,18 @@
     height: 30px; /* Anpassa höjden för att fylla utrymmet */
     border-radius: 5px; /* Runda hörnen på bilderna */
 }
-
+.logo {
+    width: auto;
+    height: 50px; /* Justera höjden efter behov */
+}
         .header-images img:first-child, .header-images img:last-child {
-            width: 60px; /* Ändra bredden för rektangulära bilder */
-            height: 30px; /* Ändra höjden för rektangulära bilder */
+            width: 70px; /* Ändra bredden för rektangulära bilder */
+            height: 40px; /* Ändra höjden för rektangulära bilder */
         }
 
         .header-images img:nth-child(2) {
-            width: 30px; /* Bevara kvadratisk bredd */
-            height: 30px; /* Bevara kvadratisk höjd */
+            width: 40px; /* Bevara kvadratisk bredd */
+            height: 40px; /* Bevara kvadratisk höjd */
         }
 
         /* Stilar för huvudinnehållet */
@@ -95,7 +98,7 @@
             background-color: #bbe837;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 7px;
             font-size: 18px;
             transition: background-color 0.3s;
         }
@@ -196,17 +199,17 @@
 <body>
     <header>
         <div class="container">
-            <h1>BonusBaren</h1>
+            <img src="bilder/logo.png" alt="BonusBaren Logotyp" class="logo">
             <!-- Lägg till navigationsmeny här om du vill -->
             <div class="header-images">
                 <a href="https://www.stodlinjen.se" target="_blank">
                     <img src="bilder/image2.png" alt="Bild 2">
                 </a>
-                
                 <img src="bilder/image3.png" alt="Bild 3">
             </div>
         </div>
     </header>
+    
 
     <main>
         <div class="container">
